@@ -1,0 +1,362 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://themewar.com/html/topland/topbiz/index.html -->
+<html class=" js csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Unistash| Interviews</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+        <!-- Include All CSS -->
+ <link rel="stylesheet" type="text/css" href="{% static 'layout/styles/layout1.css' %}">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/prettyPhoto.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/rticons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/settings.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/js-image-slider.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/preset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/style.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/responsive.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'interview/animate.css' %}">
+        <link id="layout" rel="stylesheet" type="text/css" href="{% static 'interview/wide.css' %}">
+        <link id="colorChem" rel="stylesheet" type="text/css" href="{% static 'interview/light.css' %}">
+        <link id="colorsSet" rel="stylesheet" type="text/css" href="{% static 'interview/color1.css' %}">
+
+        <!-- Favicon Icon         <link rel="icon" type="image/png" href="http://themewar.com/html/topland/topbiz/images/favicon.png">
+         Favicon Icon -->
+
+        <!--[if lt IE 9]>
+            
+        <![endif]-->
+    <script type="text/javascript" charset="UTF-8" src="{% static 'interview/common.js' %}"></script><script type="text/javascript" charset="UTF-8" src="{% static 'interview/util.js' %}"></script><script type="text/javascript" charset="UTF-8" src="{% static 'interview/stats.js' %}"></script></head>
+
+<style>
+.circle {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 5px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+}
+</style>
+
+
+
+
+    <body >
+        <!-- Start Loader -->
+        <div class="loaderWrap" style="display: none;">
+            <div id="loader">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+        </div>
+        <!-- End Loader -->
+        <!-- Start Color Preset -->
+        
+        <!-- End Color Preset -->
+        <!--================= Box Div Start ==================-->
+       <div class="boxWrapper" style ="background-image: url({% static 'i1.jpg' %});
+background-size:100%;
+         height: 100%;
+        background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; color: black;">
+    <div class="boxWrapper" >
+            <!--================= Box Div Start ==================-->
+            <!-- Header Area -->
+
+
+
+
+  <div class="wrapper row1">
+    <nav class="navbar navbar-default" id="mainnav" >
+      <div class="container" style>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="height:80px; padding-top:30px" >Unistash</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" style="height:auto; padding-top:20px;">
+            <li><a href="{%url 'index' 'index' %}" >Home</a></li>
+            <li><a href="{%url 'index' 'notes' %}" >Notes</a></li>
+            <li><a href="{%url 'index' 'papers' %}" >Papers</a></li>
+            <li><a href="{%url 'index' 'Aboutus' %}" >About Us</a></li>
+            <li><a href="{%url 'index' 'interview' %}" >Interviews</a></li>
+<li><a href="{%url 'index' 'practical-files' %}" >Lab Files</a></li>
+
+<li>
+             <a class="btn btn-default btn-outline btn-circle collapsed"   href="{%url 'index' 'contribute'%}" aria-expanded="false" aria-controls="nav-collapse1">Contribute</a>
+            
+            </li>
+{% if student %}
+<li><a>{{student.username}}</a></li>
+{% endif %}
+
+
+
+          </ul>
+          <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1" >
+            <li><a href="{%url 'index' 'notes' %}" >B. Tech</a></li>
+<li><a href="#">M. Tech</a></li>
+            <li><a href="#">M.C.A.</a></li>
+            <li><a href="#">Ph. D</a></li>
+            <li><a href="#">B. Arch</a></li>
+          
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+  </div>
+
+
+
+
+
+
+            <!-- Slider Section -->
+           
+            <!-- Testimonial Section -->
+          
+            <!-- Feature Section -->
+            
+            <!-- Portfolio Section -->
+          <section class="portfolioArea home commonSection" style ="background-image: url('i1.jpg');
+         height: 100%;
+        background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; color: black;">
+                <div class="container" style ="background-image: url('i1.jpg');
+           height: 100%; 
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover; color: black;">
+          
+     <div class="row" style="padding-top: 100px;">
+                        <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+                            <h2 class="commonTittle folio wow fadeInUp animated" data-wow-duration="700ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 700ms; animation-delay: 300ms; animation-name: fadeInUp;">Top Companies visiting campus</h2>
+                            <p class="folioSubTittle wow fadeInUp animated" data-wow-duration="700ms" data-wow-delay="350ms" style="visibility: visible; animation-duration: 700ms; animation-delay: 350ms; animation-name: fadeInUp;"><a href="https://goo.gl/forms/WBp5EbEpgcLgSE0Z2" style="text-decoration:none; color:white">Share your Experience</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="singlePortfolio">
+                                <div class="portfolioImg folioImgFix_1">
+                             
+<a href="{% url 'company' 'Xpeadia' %}">
+       <img src="{%static 'interview/folio1.jpg' %}" alt=""></a>
+
+
+
+
+                                    <div class="folioHover" style="align:center">
+                                        <a href="{% url 'company' 'Xpeadia' %}"
+class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book"></i></a>
+                                        <a ="{% url 'company' 'amazon' %}"class="detailsLink"><i class="icon-location"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolioImg folioImgFix_2">
+                                    <img src="{%static 'interview/folio2.jpg' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'amazon' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book"></i></a>
+                                        
+                                    </div>
+                                </div>
+                                <div class="portfolioImg folioImgFix_3">
+                                    <img src="{%static 'interview/folio3.jpg' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'suzuki' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book"></i></a>
+                                       </div>
+                                </div>
+                                <div class="portfolioImg folioImgFix_4">
+                                    <img src="{%static 'interview/folio5.jpg' %} " alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'microsoft' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book"></i></a>
+                                                                            </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="portfolioImg folioImgFix_5">
+                                    <img src="{%static 'interview/folio4.png' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'oracle' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book"></i></a>
+                                                                           </div>
+                                </div>
+                                <div class="portfolioImg folioImgFix_6">
+                                    <img src="{%static 'interview/folio6.jpg' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'intel' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book" ></i></a>
+                                                                            </div>
+                                </div>
+                                <div class="portfolioImg folioImgFix_7">
+                                    <img src="{%static 'interview/folio7.png' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'GM' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book" ></i></a>
+                                 </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="portfolioImg folioImgFix_8">
+                                    <img src="{% static 'interview/folio8.jpg' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'mahindra' %}" class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book" ></i></a>
+                                                                            </div>
+                                </div>
+
+
+
+                                <div class="portfolioImg folioImgFix_9">
+                                    <img src="{% static 'interview/folio9.png' %}" alt="">
+                                    <div class="folioHover">
+                                        <a href="{% url 'company' 'abc' %}"   class="prePhoto" data-rel="prettyPhoto"><i class="fa fa-book" ></i></a>
+                                                                            </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+
+                            <div class="mixurBtn">
+                                <div class="viewBtn">
+                                    <a href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fun Facts Section -->
+            
+             <section class="funFactArea commonSection" style="background-color:none;">
+                <div class="allFacts">
+                    <MARQUEE behavior="scroll" direction="left" width="100%">
+       
+  <a href="{% url 'company' 'Barclays' %}">
+      <img src="{% static 'interview/1.jpg' %}"></a>
+     
+        <img src="{%static 'interview/3.jpg' %}">
+        
+        <img src="{%static 'interview/5.jpg' %}">
+         
+        <img src="{%static 'interview/6.jpg' %}">
+        <img src="{%static 'interview/7.jpg' %}">
+        <img src="{%static 'interview/8.jpg' %}">
+       
+        <img src="{% static 'interview/10.jpg' %}">
+         
+          <img src="{%static 'interview/22.png' %}">
+        <img src="{%static 'interview/23.png' %}">
+        
+        
+ <img src="{%static 'interview/folio1.jpg' %}">
+         
+       
+
+
+
+ <img src="{%static 'interview/9.jpg' %}">
+           
+        <img src="{%static 'interview/15.jpg' %}">
+        <img src="{%static 'interview/16.jpg' %}">
+        <img src="{%static 'interview/17.jpg' %}">
+          <img src="{%static 'interview/18.png' %}">
+        <img src="{%static 'interview/19.png' %}">
+          
+          <img src="{%static 'interview/20.png'%}">
+        <img src="{%static 'interview/21.png'%}">
+         <img src="{%static 'interview/2.jpg' %}">
+        <img src="{%static 'interview/24.png' %}">
+        <img src="{%static 'interview/25.PNG' %}">
+        <img src="{%static 'interview/14.jpg' %}">
+<img src="{%static 'interview/12.jpg' %}">
+          <img src="{%static 'interview/26.png' %}">
+       
+        </MARQUEE>
+                </div>
+            </section>
+            <!-- Skill Section -->
+        
+
+
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left" style= " margin-left:25% ">Copyright &copy; 2017 - All Rights Reserved - <a href="{%url 'index' 'index' %}" >Unistash</a></p>
+
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+
+
+
+            <!--================= Box Div End ==================-->
+        </div>
+        <!--================= Box Div End ==================-->
+        <!--================= Back To Top ==================-->
+        <!-- Include All JS -->
+        <script type="text/javascript" src="{%static 'interview/jquery.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/jquery.prettyPhoto.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/mixer.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/appear.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/circle-progress.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/modernizr.custom.js ' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/directionHover.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/js-image-slider.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/jquery.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/gmaps.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/jquery.themepunch.tools.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/jquery.themepunch.revolution.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/wow.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'interview/theme.js' %}"></script>
+    
+
+</body></html>

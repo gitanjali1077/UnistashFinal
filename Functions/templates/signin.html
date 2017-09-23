@@ -1,0 +1,184 @@
+{% load staticfiles %}
+{% load myfilters %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title> Login Form</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+
+      <link rel="stylesheet" type="text/css" href="{% static 'stylelogin.css' %}">
+<script type="text/javascript">
+        function noBack()
+         {
+             window.history.forward()
+         }
+        noBack();
+        window.onload = noBack;
+        window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+        window.onunload = function() { void (0) }
+    </script>
+  
+</head>
+
+
+<script type = "text/javascript" >
+
+   function preventBack(){window.history.forward();}
+
+    setTimeout("preventBack()", 0);
+
+    window.onunload=function(){null};
+
+</script>
+<body>
+ <nav class="navbar navbar-default" id="mainnav">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="margin-top:0.1%" href="#">Unistash</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+             <li><a href="{%url 'index' 'index' %}" >Home</a></li>
+            <li><a href="{%url 'index' 'notes' %}" >Notes</a></li>
+            <li><a href="{%url 'index' 'papers' %}" >Papers</a></li>
+            <li><a href="{%url 'index' 'Aboutus' %}" >About Us</a></li>
+            <li><a href="{%url 'index' 'interview' %}" >Interviews</a></li>
+<li><a href="{%url 'index' 'practical-files' %}" >Lab Files</a></li>
+
+<li>
+           <a class="btn btn-default btn-outline btn-circle collapsed"   href="{%url 'index' 'login'%}" aria-expanded="false" aria-controls="nav-collapse1">Contribute</a>
+</li>
+
+{% if student %}
+<li><a>{{student.username}}</a></li>
+{% endif %}
+
+{% if student.username %}
+
+<li  ><img class="circle"  src="{{ abc.photo.url }} "
+
+style=" background-image:url({{ abc.photo.url }} )  ;
+  
+  width: 65px;
+  height: 65px;
+"></li>
+{% else %}
+<li  ><img class="circle" src="/static/logo.jpg"
+style="
+  width: 50px;
+  height: 50px;
+"></li>
+
+{% endif %}
+
+          </ul>
+          <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
+            <li><a href="{%url 'index' 'notes' %}" >B. Tech</a></li>
+<li><a href="#">M. Tech</a></li>
+            <li><a href="#">M.C.A.</a></li>
+            <li><a href="#">Ph. D</a></li>
+            <li><a href="#">B. Arch</a></li>
+          
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+  <div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+{{ab}}
+<form method="post">
+  {% csrf_token %}
+
+{% for field in user_form %}
+<label for="user" class="label">{{field.label_tag}}</label>
+
+ <div class="group">{{ field|addcss:"input"}}  </div>
+{% endfor %}
+
+ <div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+
+<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href=" {% url 'password_reset' %}">Forgot Password?</a>
+				</div>
+
+</form>
+
+
+
+<!----
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+
+
+------>
+
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  
+  
+</body>
+</html>

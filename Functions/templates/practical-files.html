@@ -1,0 +1,686 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link href="{% static 'layout.css' %}" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{% static 'jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'jpix.min.js' %}"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+<script type="text/javascript">
+		$(function () {
+		  $('ul.tabs').pixiefyTabs();
+		  $('ul.accordion').pixiefyAccordion();
+		})
+		</script>
+</head>
+<style>
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+body{
+height:auto;}
+
+
+#mainnav{
+color:black;
+height:auto;
+opacity:0.9;
+//padding-top:10px;
+//padding-bottom:30px;
+
+font-size:130%;
+}
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+
+ .navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+nav .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+ .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+ .navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+ .navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 40px; }
+.btn.btn-outline { background-color: transparent; }
+
+.navbar-nav.navbar-right .btn:not(.collapsed) {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.navbar-default .nav-collapse,
+.navbar.navbar-inverse .nav-collapse {
+    height: auto !important;
+    transition: transform 0.3s;
+    transform: translate(0px,-50px);
+}
+.navbar.navbar-default .nav-collapse.in,
+.navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px,0px);
+}
+#heading{
+ margin-top:-13%;margin-left:22%; 
+}
+
+
+@media screen and (max-width: 767px) {
+    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+    
+    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+    .navbar .nav-collapse .navbar-form { margin: 0; }
+    .nav-collapse>li { float: none; }
+    
+    .navbar.navbar-default .nav-collapse,
+    .navbar.navbar-inverse .nav-collapse {
+        transform: translate(-100%,0px);
+    }
+    .navbar.navbar-default .nav-collapse.in,
+    .navbar.navbar-inverse .nav-collapse.in {
+        transform: translate(0px,0px);
+    }
+    
+    .navbar.navbar-default .nav-collapse.slide-down,
+    .navbar.navbar-inverse .nav-collapse.slide-down {
+        transform: translate(0px,-100%);
+    }
+    .navbar.navbar-default .nav-collapse.in.slide-down,
+    .navbar.navbar-inverse .nav-collapse.in.slide-down {
+        transform: translate(0px,0px);
+    }
+#heading{
+ margin-top:-27%;margin-left:22%; 
+}
+
+
+}
+</style>
+<body   style ="background-color: #000000">
+ 
+
+<div style="height:auto; margin-bottom:250px">
+ <nav class="navbar navbar-default" id="mainnav">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="margin-top:0.1%" href="#">Unistash</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+             <li><a href="{%url 'index' 'index' %}" >Home</a></li>
+            <li><a href="{%url 'index' 'notes' %}" >Notes</a></li>
+            <li><a href="{%url 'index' 'papers' %}" >Papers</a></li>
+            <li><a href="{%url 'index' 'Aboutus' %}" >About Us</a></li>
+            <li><a href="{%url 'index' 'interview' %}" >Interviews</a></li>
+<li><a href="{%url 'index' 'practical-files' %}" >Lab Files</a></li>
+
+            <li>
+              <a class="btn btn-default btn-outline btn-circle collapsed"    href="{%url 'index' 'contribute'%}"  aria-expanded="false" aria-controls="nav-collapse1">Contribute
+</a>
+            </li>
+
+
+{% if student %}
+<li><a>{{student.username}}</a></li>
+{% endif %}
+
+{% if student.username %}
+
+<li  ><img class="circle"  src="{{ abc.photo.url }} "
+
+style=" background-image:url({{ abc.photo.url }} )  ;
+  
+  width: 65px;
+  height: 65px;
+"></li>
+{% else %}
+<li  ><img class="circle" src="/static/logo.jpg"
+style="
+  width: 50px;
+  height: 50px;
+"></li>
+
+{% endif %}
+
+          </ul>
+          <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
+            <li><a href="{%url 'index' 'notes' %}" >B. Tech</a></li>
+            <li><a href="#">M. Tech</a></li>
+            <li><a href="#">M.C.A.</a></li>
+            <li><a href="#">Ph. D</a></li>
+            <li><a href="#">B. Arch</a></li>
+          
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+<br><br><br><br><br><br><br><br><br>
+
+<!--  Heading for the page  -->
+
+<h1 id="heading">B. Tech (Lab Files) </h1>
+<!--  accordion  -->
+<ul class="accordion">
+  <li>
+    <a class="panel-heading" href="#">Computer Science and Technology</a>
+    
+<ul class="shutter-panel-collapse" id="semdesign">
+      <li>    
+    <a class="panel-heading" href="#">Semester 1</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto" >
+     
+<li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zNk0xRzhjamlvZm8">Chemistry</a>
+</li>
+
+
+<li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zLUNKVDNlNkJQRDQ">Physics</a>
+</li>
+
+
+<li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zWUk0YmFBeWd4b1k">ITC</a>
+</li>
+
+
+<li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zd0RTOVlKd05OM00">Workshop</a>
+</li>
+
+    </ul>
+  </li>
+  
+
+
+       <li>    
+    <a class="panel-heading" href="#">Semester 2</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zMFpJRGhoZUJENzA">Engineering Mechanics</a>
+</li>
+
+<li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zcVhIWW1fU1JmeDg">Electrical Science</a>
+</li>
+
+<li>
+<a href="https://drive.google.com/open?id=0B_rrFiMlCi0zdkVTS05DYXkwdFk">Physics</a>
+</li>
+    </ul>
+  </li>
+    <li>
+    <a class="panel-heading" href="#">Semester 3</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+
+ <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+
+ <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+     <li>    
+    <a class="panel-heading" href="#">Semester 4</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 5</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+   <li>    
+    <a class="panel-heading" href="#">Semester 6</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 7</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>    
+    <a class="panel-heading" href="#">Semester 8</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+</ul>
+
+
+  </li>
+  
+  <li>
+    <a class="panel-heading" href="#">Information Technology</a>
+    <ul class="shutter-panel-collapse" id="semdesign">
+     <li>    
+    <a class="panel-heading" href="#">Semester 1</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+
+
+       <li>    
+    <a class="panel-heading" href="#">Semester 2</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>
+    <a class="panel-heading" href="#">Semester 3</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+     <li>    
+    <a class="panel-heading" href="#">Semester 4</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 5</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+   <li>    
+    <a class="panel-heading" href="#">Semester 6</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 7</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>    
+    <a class="panel-heading" href="#">Semester 8</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+</ul>
+
+
+  </li>
+
+  
+  <li>
+    <a class="panel-heading" href="#">Electonics and Communications</a>
+    <ul class="shutter-panel-collapse" id="semdesign">
+   <li>    
+    <a class="panel-heading" href="#">Semester 1</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+  
+
+
+       <li>    
+    <a class="panel-heading" href="#">Semester 2</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>
+    <a class="panel-heading" href="#">Semester 3</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+     <li>    
+    <a class="panel-heading" href="#">Semester 4</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 5</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+   <li>    
+    <a class="panel-heading" href="#">Semester 6</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 7</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>    
+    <a class="panel-heading" href="#">Semester 8</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+</ul>
+
+
+  </li>
+
+  
+  <li>
+    <a class="panel-heading" href="#">Mechanical Engineering</a>
+    <ul class="shutter-panel-collapse" id="semdesign">
+      <li>    
+    <a class="panel-heading" href="#">Semester 1</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+  
+
+
+       <li>    
+    <a class="panel-heading" href="#">Semester 2</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>
+    <a class="panel-heading" href="#">Semester 3</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+     <li>    
+    <a class="panel-heading" href="#">Semester 4</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 5</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+   <li>    
+    <a class="panel-heading" href="#">Semester 6</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+ <li>    
+    <a class="panel-heading" href="#">Semester 7</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+    <li>    
+    <a class="panel-heading" href="#">Semester 8</a>
+    <ul class="shutter-panel-collapse" style="height:150px; overflow:auto">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+</ul>
+
+
+  </li>
+
+</ul><!--  acc ends  -->
+</div>
+<!-- footer-->
+
+
+<!--footer ends---->
+ 
+ <div class="wrapper row4" style="background-color:black; position:relative">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">UNISTASH</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN
+          KASHMERE GATE
+           New Delhi
+           110006
+           India
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890--</li>
+        <li><i class="fa fa-envelope-o"></i>igdtunistash@gmail.com </li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+       <!-- <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <!--<li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>-->
+      </ul>
+    </div>
+
+    <div  class="one_third">
+      <style>
+       #map {
+        height: 400px;
+        width: 125%;
+       }
+    </style>
+   
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 28.665488, lng: 77.232471};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxbyRnegggEZqiwIoeePKzHf3iHP-Ebdg&callback=initMap">
+    </script>
+    </div>
+    <div class="one_third" style="padding-left:10%">
+      <h6 class="heading">Join us!</h6>
+      <p class="nospace btmspace-30"></p>
+      <form  name ="myform" onsubmit="return validateForm(); " style="margin-top:-50px" class="form-horizontal" action="" method="post"
+             enctype="multipart/form-data">
+      {% csrf_token %}
+
+
+
+     {% for field in user_form %}
+    <div class="form-group" >
+             <div class=" col-sm-offset-2 col-sm-10">
+ <!---     <span class="text-danger small">{{ field.errors}}
+</span>   -->
+</div>
+   <label class="control-label ">{{ field.label_tag }} </label>
+     <div class=""> {{ field }} </div>
+
+
+   
+
+</div>
+
+
+{% endfor %}
+  {% for field in profile_form %}
+    <div class="form-group" >
+             <div class=" col-sm-offset-2 col-sm-10">
+ <!---     <span class="text-danger small">{{ field.errors}}
+</span>   -->
+</div>
+   <label class="control-label ">{{ field.label_tag }} </label>
+     <div class=""> {{ field }} </div>
+
+
+   
+
+</div>
+
+
+{% endfor %}
+
+ <div class="form-group">
+       <div class=" col-sm-offset-2 col-sm-10">
+<button type="submit" class="btn btn-success">Submit</button>  
+
+</div>    
+
+</div>
+
+</form>
+    </div> 
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">Domain Name</a></p>
+   
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->  <script>
+function validate() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        submitFlag=false;
+    }
+}
+  if( document.myForm.Name.value == ""||document.myForm.Name.length<=2)
+         {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.EMail.value == "" )
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.Email.focus() ;
+            return false;
+         }
+         return( true );
+</script>
+</body>
+
+
+
+
+</html>

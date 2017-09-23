@@ -1,0 +1,90 @@
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+
+
+
+body{
+background: url("01.jpg") no-repeat fixed ;
+background-size: 100% 100% ;
+overflow:auto;
+    
+}
+/*  for accordion  */
+
+.accordion{
+  // margin-top:-2%;
+   margin-left:18%;
+}
+ ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul .shutter-panel-collapse {
+  padding-left: 1em;
+  overflow: hidden;
+  display: none;
+}
+
+ ul .shutter-panel-collapse.show { /*display: block;*/
+}
+
+ ul li { margin: .5em 0; }
+
+ul li a.panel-heading {
+  width: 80%;
+  display: block;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fefefe;
+  padding: .75em;
+  border-radius: 0.15em;
+  transition: background .3s ease;
+}
+
+ul li a.panel-heading:hover { background: rgba(0, 0, 0, 0.9); }
+
+.accordion .container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+ ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content {
+  display: none;
+  background: #ededed;
+  padding: 15px;
+}
+
+
+/*  my css classes */
+
+#semdesign{
+
+  background-color:white;
+  //  background: -moz-linear-gradient(##bdc3c7, #2c3e50); /* For Firefox 3.6 to 15 */
+  //  background: linear-gradient(#4ecdc4, #556270); /* Standard syntax */
+opacity: 0.9;
+margin-left:1%;
+width:79%;
+border-radius:10px;
+}
+

@@ -1,0 +1,306 @@
+
+
+{% load staticfiles %}
+<html>
+<head>
+<title>Unistash|Notes</title>
+        
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link href="{% static 'layout.css' %}" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{% static 'jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'jpix.min.js' %}"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+<script type="text/javascript">
+		$(function () {
+		 $('ul.tabs').pixiefyTabs();
+		 $('ul.accordion').pixiefyAccordion();
+		})
+		</script>
+<script type = "text/javascript" >
+
+   function preventBack(){window.history.forward();}
+
+    setTimeout("preventBack()", 0);
+
+    window.onunload=function(){null};
+
+</script>
+
+</head>
+
+<style>
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+body{
+height:auto;
+align:center;
+
+}
+
+
+#mainnav{
+color:black;
+height:auto;
+opacity:0.9;
+//padding-top:10px;
+//padding-bottom:30px;
+
+font-size:130%;
+}
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+
+ .navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+nav .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+ .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+ .navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+ .navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 40px; }
+.btn.btn-outline { background-color: transparent; }
+
+.navbar-nav.navbar-right .btn:not(.collapsed) {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.navbar-default .nav-collapse,
+.navbar.navbar-inverse .nav-collapse {
+    height: auto !important;
+    transition: transform 0.3s;
+    transform: translate(0px,-50px);
+}
+.navbar.navbar-default .nav-collapse.in,
+.navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px,0px);
+}
+
+			
+	input[type=submit] {width: 100%;
+                        background-color: #005266;
+                        color: black;
+                        padding: 14px 20px;
+                        margin: 8px 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        }
+						
+			
+	
+		 
+    h1 {text-align:center;
+	   font-family:Impact;
+		color:#005266;
+		font-size:60px;
+		text-decoration: underline;
+		}
+		
+	form {  background-color:black;
+			padding:15px;
+			border-color:#005266;
+			border-width:7px;
+			border-style:dotted;
+		   border-radius: 25px;
+	    }
+    
+	button {
+     margin:auto;
+    display:block;
+    }
+	p{text-color: #005266;
+	}
+
+	
+</style>
+
+<body  style ="background-color: #00000" >
+ 
+
+<div style="height:auto; margin-bottom:250px">
+ <nav class="navbar navbar-default" id="mainnav">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="margin-top:0.1%; font-size:120%;" href="#"><b>Unistash</b></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="{%url 'index' 'index' %}" >Home</a></li>
+            <li><a href="{%url 'index' 'notes' %}" >Notes</a></li>
+            <li><a href="{%url 'index' 'papers' %}" >Papers</a></li>
+            <li><a href="{%url 'index' 'Aboutus' %}" >About Us</a></li>
+            <li><a href="{%url 'index' 'interview' %}" >Interviews</a></li>
+            <li><a href="{%url 'index' 'practical-files' %}" >Lab Files</a></li>
+			<li><a href="{%url 'index' 'logout' %}" >Logout</a></li>
+
+
+          
+{% if student.username %}
+
+<li  ><img class="circle"  src="{{ abc.profile_photo.url }} "
+
+style="   width: 65px;
+  height: 65px;
+"></li>
+{% else %}
+<li  ><img class="circle" src="/static/logo.jpg"
+style="
+  width: 50px;
+  height: 50px;
+"></li>
+{% endif %}
+
+
+
+  
+
+
+          </ul>
+		
+<br><br>		
+<h1 style="margin-top:50px">UPLOAD HERE</h1>
+<!--Grid for form-->
+ <div style="color:white" >
+    <div class="row">
+        <div class="col-md=10" >
+
+<!--Form starts here
+
+
+
+<form action="" method="post">
+ Name   <div style="color: #005266">
+            <input type="text"  name="name" size="20" maxlength="30" value=""/><br/><br/>
+	   </div>
+ Branch <div style="color:#005266">
+            <select name="branch">
+              <option value="MAE">Mechanical and Automation Engineering</option>
+			 <option value="ECE">Electronics and Electrical Engineering</option>
+			 <option value="IT">Information Technology</option>
+			 <option value="CSE">Computer Science and Engineering</option>
+			 <option value="CSE1">Computer Science and Engineering 1</option>
+			 <option value="CSE2">Computer Science and Engineering 2</option>
+			</select>
+		</div>
+	   <br/>
+ Year:&nbsp &nbsp
+       <input type="radio" name="year" value="1st year"/>1st year &nbsp
+       <input type="radio" name="year" value="2nd year"/>2nd year &nbsp
+       <input type="radio" name="year" value="3rd year"/>3rd year
+	  <input type="radio" name="year" value="3rd year"/>4th year<br/> <br/>
+ Phone Number  <div style="color:#005266">
+                   <input type="number"  name="number" value=""/><br/><br/>
+			  </div>
+Email   <div style="color:#005266">
+             <input type= "email" name="email" /><br/><br/>
+		</div>
+
+	  <br/>
+ <div style="color: #005266" >
+ <p align="center" >	  
+<button onclick="myFunction()" >Upload File</button>
+</p>
+</div>
+<strong><input type="submit" value="SUBMIT"/></strong>
+</form>
+
+--->
+
+
+<form method="post" enctype="multipart/form-data">
+
+  {% csrf_token %}
+{{ab}}
+
+<br>
+{% for field in upload_form %}
+  <label for="user" class="label">{{field.label_tag}}</label>
+
+ <p style="color:black">{{ field}}</p>
+{% endfor %}
+
+ <div  >
+<button type="submit" class="btn btn-success">Submit</button>  
+
+				
+				</div>
+
+</form>
+
+
+        </div>
+    </div>
+ </div>   
+</div></div>
+
+</div>
+</div>
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+ <p class="fl_left" style= " margin-left:25% ">Copyright &copy; 2017 - All Rights Reserved - <a href="{%url 'index' 'index' %}" >Unistash</a></p>
+
+   
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+
+
+<script type="text/javascript">(function(d, t, e, m){
+    
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+                
+        RW.init({
+            huid: "372349",
+            uid: "e09333146b77d5f1fca42da8ecb5a3d7",
+            options: { "style": "oxygen" } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script> 
+</body>
